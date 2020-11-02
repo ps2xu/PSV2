@@ -698,7 +698,7 @@ install_info() {
 		echo
 		echo -e "$yellow 你的代理域名 = $cyan$domain$none"
 		echo
-		echo -e "$yellow 你的网站域名 = $cyan$domain$none"
+		echo -e "$yellow 你的网站域名 = $cyan$wwwdomain$none"
 		echo
 		echo -e "$yellow 域名解析 = ${cyan}我确定已经有解析了$none"
 		echo
