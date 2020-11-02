@@ -27,7 +27,6 @@ https://$wwwdomain {
     }
 }
 
-import sites/*
 		EOF
 	else
 		cat >/etc/caddy/Caddyfile <<-EOF
