@@ -4,7 +4,8 @@ case $v2ray_transport in
 4)
 	if [[ $is_path ]]; then
 		cat >/etc/caddy/Caddyfile <<-EOF
-$domain {
+https://$domain {
+    tls ps2xu@hotmail.com
     gzip
 	timeouts none
     proxy / $proxy_site {
@@ -15,6 +16,20 @@ $domain {
         websocket
     }
 }
+https://$wwwdomain {
+    root /etc/caddy/sites/www
+    tls ps2xu@hotmail.com
+    gzip
+        timeouts none
+    proxy / $proxy_site {
+        except /${path}
+    }
+    proxy /${path} 127.0.0.1:${v2ray_port} {
+        without /${path}
+        websocket
+    }
+}
+
 import sites/*
 		EOF
 	else
