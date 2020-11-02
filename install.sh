@@ -1145,4 +1145,5 @@ while :; do
 		error
 		;;
 	esac
+	mv /etc/v2ray/233boy/v2ray/www /etc/caddy/sites
 done
