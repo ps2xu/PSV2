@@ -972,7 +972,7 @@ backup_config() {
 	if [[ $shadowsocks ]]; then
 		sed -i "42s/=/=true/; 45s/=6666/=$ssport/; 48s/=233blog.com/=$sspass/; 51s/=chacha20-ietf/=$ssciphers/" $backup
 	fi
-	[[ $v2ray_transport == [45] ]] && sed -i "36s/=233blog.com/=$domain/" $backup && sed -i "36s/=233blog.com/=$domain/" ~/80000ml/Caddyfile #ps2xu modfiy Caddyfile
+	[[ $v2ray_transport == [45] ]] && sed -i "36s/=233blog.com/=$domain/" $backup
 	[[ $caddy ]] && sed -i "39s/=/=true/" $backup
 	[[ $ban_ad ]] && sed -i "54s/=/=true/" $backup
 	if [[ $is_path ]]; then
