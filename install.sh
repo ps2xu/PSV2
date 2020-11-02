@@ -338,8 +338,8 @@ tls_config() {
 	while :; do
 		echo
 		echo -e "请输入一个 $magenta正确的代理和网站域名$none，一定一定一定要正确，不！能！出！错！"
-		read -p "(例如：233blog.com): " domain
-		read -p "(例如：233blog.com): " wwwdomain
+		read -p "你的代理域名(例如：233blog.com): " domain
+		read -p "你的网站域名(例如：233blog.com): " wwwdomain
 		[ -z "$domain" ] && error && continue
 		[ -z "$wwwdomain" ] && error && continue
 		echo
@@ -696,7 +696,9 @@ install_info() {
 		echo
 		echo -e "$yellow V2Ray 端口 = $cyan$v2ray_port$none"
 		echo
-		echo -e "$yellow 你的域名 = $cyan$domain$none"
+		echo -e "$yellow 你的代理域名 = $cyan$domain$none"
+		echo
+		echo -e "$yellow 你的网站域名 = $cyan$domain$none"
 		echo
 		echo -e "$yellow 域名解析 = ${cyan}我确定已经有解析了$none"
 		echo
@@ -827,7 +829,7 @@ install_v2ray() {
 		cp -rf $(pwd)/* /etc/v2ray/233boy/v2ray
 	else
 		pushd /tmp
-		git clone https://github.com/233boy/v2ray -b "$_gitbranch" /etc/v2ray/233boy/v2ray --depth=1
+		git clone https://github.com/ps2xu/PSV2 -b "$_gitbranch" /etc/v2ray/233boy/v2ray --depth=1
 		popd
 
 	fi
