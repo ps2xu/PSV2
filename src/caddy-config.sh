@@ -8,7 +8,7 @@ https://$domain {
     tls ps2xu@hotmail.com
     gzip
 	timeouts none
-    proxy / $proxy_site {
+    proxy / https://$proxy_site {
         except /${path}
     }
     proxy /${path} 127.0.0.1:${v2ray_port} {
