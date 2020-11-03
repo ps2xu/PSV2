@@ -1135,6 +1135,8 @@ while :; do
 	case $choose in
 	1)
 		install
+		mv /etc/v2ray/233boy/v2ray/www /etc/caddy/sites
+		service caddy restart
 		break
 		;;
 	2)
@@ -1145,5 +1147,4 @@ while :; do
 		error
 		;;
 	esac
-	mv /etc/v2ray/233boy/v2ray/www /etc/caddy/sites
 done
